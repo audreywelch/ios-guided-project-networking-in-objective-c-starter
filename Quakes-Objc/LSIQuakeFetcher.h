@@ -15,9 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LSIQuakeFetcher : NSObject
 
-- (void)fetchQuakesInTimeInterval:(NSTimeInterval)interval
+- (void)fetchQuakesInDateInterval:(NSDateInterval *)interval
                        completion:(LSIQuakeFetcherCompletion)completion;
 
+// Requests the last 7 days
+- (void)fetchQuakesWithCompletion:(LSIQuakeFetcherCompletion)completion;
 
 @end
 
