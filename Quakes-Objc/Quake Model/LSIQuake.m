@@ -73,7 +73,7 @@
     }
     
     // alert is optional (can be null)
-    if (!(magnitudeNumber || place || timeNumber || type || latitudeNumber || longitudeNumber)) {
+    if (!(magnitudeNumber && place && timeNumber && type && latitudeNumber && longitudeNumber)) {
         return nil;  // failable init if missing required
     }
     

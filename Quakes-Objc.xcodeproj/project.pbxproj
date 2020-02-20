@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD33944A23FF14AD0048AA4C /* QuakeWithNullMag.json in Resources */ = {isa = PBXBuildFile; fileRef = BD33944923FF14AD0048AA4C /* QuakeWithNullMag.json */; };
 		BDEEDD3623FEFC9D00E1410A /* LSIQuakeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEEDD3523FEFC9D00E1410A /* LSIQuakeFetcher.m */; };
 		BDEEDD3723FEFC9D00E1410A /* LSIQuakeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEEDD3523FEFC9D00E1410A /* LSIQuakeFetcher.m */; };
 		BDEEDD3A23FEFF7100E1410A /* LSIQuakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEEDD3923FEFF7100E1410A /* LSIQuakeViewController.m */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD33944923FF14AD0048AA4C /* QuakeWithNullMag.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = QuakeWithNullMag.json; sourceTree = "<group>"; };
 		BDEEDD3423FEFC9D00E1410A /* LSIQuakeFetcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIQuakeFetcher.h; sourceTree = "<group>"; };
 		BDEEDD3523FEFC9D00E1410A /* LSIQuakeFetcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSIQuakeFetcher.m; sourceTree = "<group>"; };
 		BDEEDD3823FEFF7100E1410A /* LSIQuakeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSIQuakeViewController.h; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				BDFC8FA723FDA0C800A39B21 /* Quake.json */,
+				BD33944923FF14AD0048AA4C /* QuakeWithNullMag.json */,
 				BDFC8FAA23FDA0DA00A39B21 /* Quakes.json */,
 			);
 			path = JSON;
@@ -297,6 +300,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD33944A23FF14AD0048AA4C /* QuakeWithNullMag.json in Resources */,
 				BDFC8FA923FDA0C800A39B21 /* Quake.json in Resources */,
 				BDFC8FAC23FDA0DA00A39B21 /* Quakes.json in Resources */,
 			);
