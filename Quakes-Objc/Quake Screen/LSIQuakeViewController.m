@@ -7,8 +7,11 @@
 //
 
 #import "LSIQuakeViewController.h"
+#import "LSIQuakeFetcher.h"
 
 @interface LSIQuakeViewController ()
+
+@property LSIQuakeFetcher *quakeFetcher;
 
 @end
 
@@ -17,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    
+    self.quakeFetcher = [[LSIQuakeFetcher alloc] init];
     
 }
 
