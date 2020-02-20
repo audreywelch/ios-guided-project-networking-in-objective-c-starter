@@ -69,6 +69,7 @@ typedef void (^WeatherCompletion)(int temperature);
         
     }];
     
+    
 }
 
 //- (void)doWorkAndCallCompletion:(void (^)(int temperature))completion {
