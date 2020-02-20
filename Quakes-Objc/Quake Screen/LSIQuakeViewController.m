@@ -22,7 +22,14 @@
 
     self.quakeFetcher = [[LSIQuakeFetcher alloc] init];
     
+    [self.quakeFetcher fetchQuakesWithCompletion:^(NSArray * _Nullable quakes, NSError * _Nullable error) {
+        if (error) {
+            NSLog(@"Error fetching quakes: %@", error);
+            return;
+        }
+        
+        NSLog(@"Quakes: %@", quakes);
+    }];
 }
-
 
 @end

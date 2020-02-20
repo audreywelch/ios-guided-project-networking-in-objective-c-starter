@@ -65,6 +65,13 @@
     
     // check if required properties are non-nil, otherwise return nil
     
+    
+    // API Decision: Discard any null magnitudes, but print it out for investigation
+    if ([magnitudeNumber isKindOfClass:[NSNull class]]) {
+        magnitudeNumber = nil;
+        NSLog(@"Mag is null: %@", dictionary);
+    }
+    
     // alert is optional (can be null)
     if (!(magnitudeNumber || place || timeNumber || type || latitudeNumber || longitudeNumber)) {
         return nil;  // failable init if missing required
