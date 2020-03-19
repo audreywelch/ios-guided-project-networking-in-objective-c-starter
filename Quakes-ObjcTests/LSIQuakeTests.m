@@ -10,6 +10,7 @@
 #import "LSIFileHelper.h"
 #import "LSILog.h"
 #import "LSIQuake.h"
+#import "LSIQuake+NSJSONSerialization.h"
 #import "LSIQuakeResults.h"
 
 @interface LSIQuakeTests : XCTestCase

@@ -8,6 +8,7 @@
 
 #import "LSIQuakeResults.h"
 #import "LSIQuake.h"
+#import "LSIQuake+NSJSONSerialization.h"
 
 @implementation LSIQuakeResults
 
