@@ -7,7 +7,7 @@
 
 #import "LSIErrors.h"
 
-NSString * const LSIErrorDomain = @"LSIErrorDomain";
+NSString * const LSIErrorDomain = @"com.LambdaSchool.Quakes";
 
 NSError *errorWithMessage(NSString *message, NSInteger errorCode) {
     NSDictionary *userInfo = @{ NSLocalizedDescriptionKey : message };

@@ -29,6 +29,12 @@
             return;
         }
         NSLog(@"Quakes: %ld", quakes.count);
+        
+        LSIQuake *quake = quakes.firstObject;
+        
+        NSLog(@"Magnitude: %f", quake.magnitude.doubleValue);
+        
+        // TODO: update UI with data from API (MapKit or TableView)
     }];
 }
 

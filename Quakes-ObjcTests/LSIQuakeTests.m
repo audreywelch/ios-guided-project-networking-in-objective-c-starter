@@ -23,7 +23,7 @@
     NSData *quakeData = loadFile(@"Quake.json", [LSIQuakeTests class]);
     //    NSLog(@"quake: %@", quakeData); // Remove print statements in final code, only for "sanity check" when implementing
     
-    NSError *jsonError = nil;
+    NSError *jsonError = nil; // nil = no error, anything else is an error
     NSDictionary *quakeDictionary = [NSJSONSerialization JSONObjectWithData:quakeData options:0 error:&jsonError];
     if (jsonError) {
         NSLog(@"JSON Parsing error: %@", jsonError);
