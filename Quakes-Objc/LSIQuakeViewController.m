@@ -23,15 +23,13 @@
 
     self.quakeFetcher = [[LSIQuakeFetcher alloc] init];
 
-    [self.quakeFetcher fetchQuakesInTimeInterval:nil completionBlock:^(NSArray<LSIQuake *> * _Nonnull quakes, NSError * _Nonnull error) {
-        
+    [self.quakeFetcher fetchQuakesWithCompletionBlock:^(NSArray<LSIQuake *> * _Nullable quakes, NSError * _Nullable error) {
         if (error) {
             NSLog(@"Error fetching quakes: %@", error); // FIXME: Update UI based on errors
             return;
         }
         NSLog(@"Quakes: %ld", quakes.count);
     }];
-
 }
 
 @end
