@@ -33,7 +33,51 @@
     
     responder.name = @"John";
     NSLog(@"name: %@", responder.name);
+
+    // Swift
+    //    let addNumbers = { (a: Int, b: Int) -> Int in
+    //        a + b
+    //    }
+    //    print(addNumbers(a: 4, b: 9))
+
+    // Objective-C
+    // returnType (^blockName)(parameterTypes) = ^returnType(parameters) {
+    //
+    // };
+    // blockName()
+    
+    // Block in Objective-C (anonymous function, similar to a Closure in Swift)
+    int (^addNumbers)(int a, int b) = ^int(int a, int b) {
+        return a + b;
+    };
+
+    int result = addNumbers(15, 27);
+    NSLog(@"Result: %d", result);
+    
+    [self doWorkAndCallCompletionHandler:^(int temperature) {
+       // Update the UI (main thread)
+        
+        // Option + 0 = º
+        NSLog(@"The temperature is %dºF", temperature);
+    }];
 }
+
+// - (returnType)methodName:(returnType (^)(parameterTypes))completionName {
+- (void)doWorkAndCallCompletionHandler:(void (^)(int temperature))completion {
+    // API Call to get temperature ...
+    NSLog(@"Getting temperature from API %%");
+    
+    completion(66);
+}
+
+//- (void)compare:(BOOL (^)(int a, int b))completion {
+//    // API Call to get temperature ...
+//    NSLog(@"Getting temperature from API %%");
+//
+//    if (completion(27, 42)) {
+//        NSLog(@"comparing values");
+//    }
+//}
 
 
 @end
