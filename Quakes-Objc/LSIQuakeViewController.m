@@ -9,7 +9,7 @@
 #import "LSIQuakeViewController.h"
 #import "LSIQuakeFetcher.h"
 #import "NSDateInterval+LSIDayInterval.h"
-
+#import "LSIQuake.h"
 // Class Extension (anonymous category)
 @interface LSIQuakeViewController ()
 
@@ -39,6 +39,12 @@
         }
         
         NSLog(@"Quakes: %ld", quakes.count);
+        
+        LSIQuake *quake = quakes.firstObject;
+        if (quake) {
+            NSLog(@"Quake mag: %@", quake.magnitude);
+        }
+        
     }];
     
 }

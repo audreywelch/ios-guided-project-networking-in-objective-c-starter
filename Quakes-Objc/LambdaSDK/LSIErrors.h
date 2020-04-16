@@ -7,15 +7,17 @@
 
 #import <Foundation/Foundation.h>
 
-// LSIErrors.h
+// Declare a constant that will be defined in the .m file
 extern NSString * const LSIErrorDomain;
 
-typedef enum : NSInteger {
-    LSIAPIError = 1000,   		// generic API error
-    LSIJSONDecodeError = 1001,	// JSON decoding error
-    LSIDataNilError = 1002,   	// Data is nil error
-    // TODO: Add any other error codes here for generic types of errors, your message can provide more details to the user
-} LSIErrorCode;
+// Use the NS_ENUM() macro when making new enum values
+typedef NS_ENUM(NSInteger, LSIErrorCode) {
+    LSIAPIError = 1000,           // generic API error
+    LSIJSONDecodeError = 1001,    // JSON decoding error
+    LSIDataNilError = 1002,       // Data is nil error
+    
+    // TODO: Add more error codes here that may need to be handled
+};
 
-/// Creates an error with a localized message in the 
+/// Creates an error with a localized message
 NSError *errorWithMessage(NSString *message, NSInteger errorCode);
