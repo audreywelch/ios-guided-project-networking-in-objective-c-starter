@@ -33,6 +33,27 @@
     
     responder.name = @"John";
     NSLog(@"name: %@", responder.name);
+    
+    // Blocks = closures in Swift
+    
+    // Swift
+    // let addNumbers = { (a: Int, b: Int) -> Int in
+    //      a + b
+    // }
+    // addNumbers(6, 3) // returns 9
+    
+    // Obj-c
+    // returnType (^blockNameVariable)(parametersCommaSeparated) = ^returnType(parameters) {
+    //      // lines of code
+    // };
+    int (^addNumbers)(int a, int b) = ^int (int a, int b) {
+        return a + b;
+    };
+    
+    int result = addNumbers(5, 6);
+    NSLog(@"addNumbers: %d", result);
+    
+    // We can also pass blocks to functions - which is the actually useful thing they do
 }
 
 
