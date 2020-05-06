@@ -58,8 +58,45 @@ static NSString *baseURLString = @"https://earthquake.usgs.gov/fdsnws/event/1/qu
         // that lets us know we did actually invoke the data task
         NSLog(@"url: %@", url);
         
+        // Errors
+        if (error) {
+            completionBlock(nil, error);
+            return;
+        }
         
+        if (!data) {
+            // No error was given, but also no data
+            // So we need to create our own error here
+            // In this case we customized a way to make this easier with our LSIErrors.h/.m
+            NSError *dataError = errorWithMessage(@"No data in URL response for quakes", LSIDataNilError);
+            completionBlock(nil, dataError);
+            return;
+        }
         
+        // Data parsing
+        
+        // We use NSError instead of do-catch blocks in objc
+        // Give the message the error and the address of the error
+        // & = address of
+        NSError *jsonError = nil; // nil = no error
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        
+        // Future: You may need to check kindOfClass if it's not what we expect!
+        
+        if (jsonError) {
+            completionBlock(nil, jsonError);
+            return;
+        }
+        
+        // Decode using our initializers
+        LSIQuakeResults *quakeResults = [[LSIQuakeResults alloc] initWithDictionary:json];
+        
+        // FIXME: check for non-nil results
+        
+        completionBlock(quakeResults.quakes, nil);
+        
+        // Call completion handlers
+
     }];
     
     [task resume];

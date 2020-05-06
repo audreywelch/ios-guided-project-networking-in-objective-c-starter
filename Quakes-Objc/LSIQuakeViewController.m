@@ -9,6 +9,7 @@
 #import "LSIQuakeViewController.h"
 #import "LSIQuakeFetcher.h"
 #import "NSDateInterval+LSIDayInterval.h"
+#import "LSIQuake.h"
 
 // Class Extension (anonymous category) - anonymous because it has no value inside of it
 @interface LSIQuakeViewController ()
@@ -42,6 +43,11 @@
         
         // Otherwise, we have a list of quakes
         NSLog(@"Quakes: %ld", quakes.count);
+        
+        LSIQuake *quake = quakes.firstObject;
+        if (quake) {
+            NSLog(@"Quake mag: %@", quake.magnitude);
+        }
     }];
 }
 
